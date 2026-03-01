@@ -295,7 +295,6 @@ nav {
 /* MOBILE RESPONSIVENESS FIXES (Screens under 768px) */
 /* ========================================= */
 
-/* 1. Stop the page from scrolling left and right (removes the white gap) */
 html, body {
     overflow-x: hidden;
     width: 100%;
@@ -308,28 +307,47 @@ html, body {
 }
 
 @media (max-width: 768px) {
-    /* 2. Fix the Navigation Menu to stack neatly */
-    header, nav {
+    /* 1. Fix Header & Navigation */
+    header {
         flex-direction: column !important;
-        gap: 15px;
-        padding: 20px;
-        text-align: center;
-        align-items: center;
+        padding: 15px 10px !important;
     }
     
+    nav {
+        margin-top: 10px;
+        width: 100%;
+    }
+
     header div, nav div, nav ul { 
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 15px;
+        gap: 12px !important; /* Tighter gap */
+        width: 100%;
+        padding: 0;
+    }
+
+    nav a {
+        font-size: 0.9rem !important; /* Makes links slightly smaller to fit in one row */
+    }
+
+    /* 2. Fix the White Text Overlap on the Green Background */
+    /* (This ensures the box stretches to hold your name) */
+    .hero, section {
+        padding-top: 40px !important; 
+        height: auto !important;
+        min-height: auto !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
         width: 100%;
     }
 
-    /* 3. Shrink the giant name in the hero section */
+    /* 3. Keep Name Sized for Mobile */
     h1 {
-        font-size: 2.5rem !important;
+        font-size: 2.2rem !important;
         word-wrap: break-word;
-        line-height: 1.1;
+        line-height: 1.2 !important;
+        margin-top: 0 !important;
         margin-bottom: 20px;
     }
 
@@ -337,14 +355,7 @@ html, body {
         font-size: 2rem !important;
     }
 
-    /* 4. Fix layout padding to keep things off the edges */
-    section, .hero, .container {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-        width: 100%;
-    }
-
-    /* 5. Stack grids vertically */
+    /* 4. Stack grids vertically */
     .contact-grid, 
     .about-grid, 
     .project-grid {   
@@ -354,7 +365,7 @@ html, body {
         width: 100%;
     }
     
-    /* 6. Ensure buttons and cards don't stretch off screen */
+    /* 5. Ensure buttons and cards don't stretch off screen */
     .cta-big, button, .info-item, .card {
         max-width: 100%;
         box-sizing: border-box;
