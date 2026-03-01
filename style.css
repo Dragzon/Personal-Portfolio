@@ -307,44 +307,49 @@ html, body {
 }
 
 @media (max-width: 768px) {
-    /* 1. Fix Header & Navigation */
+    /* 1. Force Header & Links into ONE Horizontal Row */
     header {
-        flex-direction: column !important;
-        padding: 15px 10px !important;
+        display: flex !important;
+        flex-direction: row !important; /* Keeps it horizontal */
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 15px !important;
+        flex-wrap: nowrap !important; /* Forces it to stay on one line */
+        width: 100%;
     }
     
     nav {
-        margin-top: 10px;
-        width: 100%;
+        margin: 0 !important;
+        width: auto !important;
     }
 
-    header div, nav div, nav ul { 
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px !important; /* Tighter gap */
-        width: 100%;
+    nav ul { 
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 10px !important; /* Tighten the space between links */
+        flex-wrap: nowrap !important;
+        margin: 0;
         padding: 0;
     }
 
     nav a {
-        font-size: 0.9rem !important; /* Makes links slightly smaller to fit in one row */
+        font-size: 0.75rem !important; /* Make links small enough to fit side-by-side */
+        padding: 0 !important;
+        white-space: nowrap !important; /* Stop link text from breaking in half */
     }
 
-    /* 2. Fix the White Text Overlap on the Green Background */
-    /* (This ensures the box stretches to hold your name) */
+    /* 2. Fix the Text Overlap (Push "ZENITH" safely down into the green) */
     .hero, section {
-        padding-top: 40px !important; 
+        padding-top: 100px !important; /* Adds a bumper so text doesn't hit the white header */
         height: auto !important;
         min-height: auto !important;
         padding-left: 20px !important;
         padding-right: 20px !important;
-        width: 100%;
     }
 
     /* 3. Keep Name Sized for Mobile */
     h1 {
-        font-size: 2.2rem !important;
+        font-size: 2rem !important;
         word-wrap: break-word;
         line-height: 1.2 !important;
         margin-top: 0 !important;
@@ -352,7 +357,7 @@ html, body {
     }
 
     h2 {
-        font-size: 2rem !important;
+        font-size: 1.8rem !important;
     }
 
     /* 4. Stack grids vertically */
