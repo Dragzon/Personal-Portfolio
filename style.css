@@ -292,32 +292,71 @@ nav {
 }
 
 /* ========================================= */
-/* MOBILE RESPONSIVENESS (Screens under 768px) */
+/* MOBILE RESPONSIVENESS FIXES (Screens under 768px) */
 /* ========================================= */
 
+/* 1. Stop the page from scrolling left and right (removes the white gap) */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 @media (max-width: 768px) {
-    /* 1. Stack grid items vertically instead of side-by-side */
+    /* 2. Fix the Navigation Menu to stack neatly */
+    header, nav {
+        flex-direction: column !important;
+        gap: 15px;
+        padding: 20px;
+        text-align: center;
+        align-items: center;
+    }
+    
+    header div, nav div, nav ul { 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+    }
+
+    /* 3. Shrink the giant name in the hero section */
+    h1 {
+        font-size: 2.5rem !important;
+        word-wrap: break-word;
+        line-height: 1.1;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 2rem !important;
+    }
+
+    /* 4. Fix layout padding to keep things off the edges */
+    section, .hero, .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        width: 100%;
+    }
+
+    /* 5. Stack grids vertically */
     .contact-grid, 
     .about-grid, 
-    .project-grid {   /* Add any other grid class names you used here */
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
+    .project-grid {   
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+        width: 100%;
     }
-
-    /* 2. Add some breathing room on the edges of the phone screen */
-    body {
-        padding: 20px;
-    }
-
-    /* 3. Make huge text slightly smaller for mobile */
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    /* 4. Ensure images don't stretch off the screen */
-    img {
+    
+    /* 6. Ensure buttons and cards don't stretch off screen */
+    .cta-big, button, .info-item, .card {
         max-width: 100%;
-        height: auto;
+        box-sizing: border-box;
     }
 }
