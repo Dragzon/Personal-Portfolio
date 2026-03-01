@@ -343,23 +343,19 @@ html, body {
     .hamburger { display: flex; }
     
     /* 3. Hide & Style the Dropdown Menu */
-    /* ... (keep your existing .nav-links code above this) ... */
-
-    .nav-links a {
-        font-size: 1.2rem;
-        font-weight: 700;
-        display: block; /* Makes the whole row clickable, not just the text */
-        width: 80%; /* Keeps the highlight from touching the screen edges */
-        margin: 0 auto; /* Centers the button */
-        padding: 12px 20px !important;
-        border-radius: 10px; /* Gives the highlight rounded corners */
-        transition: background-color 0.2s ease, color 0.2s ease;
-    }
-
-    /* THIS is what happens the moment your finger touches the screen */
-    .nav-links a:active {
-        background-color: var(--primary-green) !important; /* Turns background green */
-        color: var(--white) !important; /* Turns text white */
+    .nav-links {
+        display: none; /* Hidden until clicked */
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* Sits right under the header */
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        padding: 30px 0;
+        gap: 25px;
+        text-align: center;
+        z-index: 999;
     }
 
     /* JS adds this class to make the menu visible */
