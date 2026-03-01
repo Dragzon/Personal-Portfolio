@@ -292,6 +292,21 @@ nav {
 }
 
 /* ========================================= */
+/* MOBILE RESPONSIVENESS FIXES (Screens under 768px) */
+/* ========================================= */
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* ========================================= */
 /* HAMBURGER MENU (HIDDEN ON DESKTOP)        */
 /* ========================================= */
 .hamburger {
@@ -313,21 +328,6 @@ nav {
     background-color: var(--dark);
     border-radius: 5px;
     transition: all 0.3s ease;
-}
-
-/* ========================================= */
-/* MOBILE RESPONSIVENESS FIXES (Screens under 768px) */
-/* ========================================= */
-
-html, body {
-    overflow-x: hidden;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-* {
-    box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
