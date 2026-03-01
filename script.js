@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // =========================================
-    // HAMBURGER MENU LOGIC
+    // 3. HAMBURGER MENU LOGIC
     // =========================================
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const navMenu = document.getElementById('nav-menu');
