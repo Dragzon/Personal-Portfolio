@@ -408,4 +408,18 @@ html, body {
         max-width: 100%;
         box-sizing: border-box;
     }
+
+    /* 9. Fix Hero Buttons Spacing on Mobile */
+    .hero-btns {
+        display: flex !important;
+        flex-direction: column !important; /* Stacks them top-to-bottom */
+        gap: 20px !important; /* Adds the vertical space! */
+        align-items: center !important; /* Keeps them perfectly centered */
+    }
+
+    .hero-btns .btn {
+        margin: 0 !important; /* Removes the desktop horizontal spacing */
+        width: 80%; /* Makes them a nice uniform width on phones */
+        justify-content: center;
+    }
 }
